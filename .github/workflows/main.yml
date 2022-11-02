@@ -43,5 +43,6 @@ jobs:
     - run: cat file1.txt
     - run: echo "This is new text" >> file1.txt
     - run: cat file1.txt
+    - run: python hello.py
     
     
