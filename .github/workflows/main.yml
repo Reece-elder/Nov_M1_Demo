@@ -19,6 +19,9 @@ on: [push]
 # We can access this with echo $GLOBAL_VAR
 env: 
   GLOBAL_VAR: "This is Globally available!"
+  # PASSWORD: "secret123" This is bad, don't do this! Use Secret instead
+  # SECRET_TEXT_ENV: ${{secrets.SECRET_TEXT}}
+  # echo $SECRET_TEXT_ENV
 
 # What jobs you wish the server to do
 jobs:
@@ -32,7 +35,9 @@ jobs:
     - name: Running global variable
       run: echo $GLOBAL_VAR
     - name: Running local variable
-      run: echo $local_VAR
+      run: echo $LOCAL_VAR
+    - name: Running Secret Var
+      run: echo ${{secrets.SECRET_TEXT}}
 
   # What is the name of the job
   demo_job:
