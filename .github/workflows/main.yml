@@ -29,5 +29,5 @@ jobs:
     - run: pwd
     - run: ls -a
     - run: echo 'Commit message ${{ github.event.head_commit.message }}'
-    - run: echo 'job name ${{ github.job }}
+    - run: echo 'job name ${{ github.job }}'
     
