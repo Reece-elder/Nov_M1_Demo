@@ -37,7 +37,7 @@ jobs:
     - name: Running local variable
       run: echo $LOCAL_VAR
     - name: Running Secret Var
-      run: echo ${{secrets.SECRET_TEXT}}
+      run: echo "${{secrets.SECRET_TEXT}}"
 
   # What is the name of the job
   demo_job:
