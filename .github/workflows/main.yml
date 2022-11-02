@@ -55,7 +55,6 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2.5.0
-    - run: cd scripts
-    - run: ./build.sh
+    - run: ./scripts/build.sh
     
     
