@@ -55,6 +55,8 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2.5.0
+    # Add permission to Github to execute our script
+    - run: chmod +x scripts/build.sh # Changing the modifiers and adding executable permission with this user
     - run: ./scripts/build.sh
     
     
