@@ -85,5 +85,23 @@ jobs:
     # Add permission to Github to execute our script
     - run: chmod +x scripts/build.sh # Changing the modifiers and adding executable permission with this user
     - run: ./scripts/build.sh
+
+# When the jobs run, they run semi randomly, often you require them to run in order
+# Build -> Test -> Check Results -> Cleanup -> Deploy
+# needs command, needs: <job name> and this job wont run until the specified job completes
+
+  job1: 
+    runs-on: ubuntu-latest
+    needs: build_job
+    steps:
+    - run: echo "Job started!"
+    - run: sleep 10
+
+  job2:
+    runs-on: ubuntu-latest
+    needs: job1
+    steps:
+    - run: echo "Job 2 started!"
+
     
     
