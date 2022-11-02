@@ -45,4 +45,9 @@ jobs:
     - run: cat file1.txt
     - run: python hello.py
     
+  print_job:
+    runs-on: ubuntu-latest
+    steps:
+    - run: ls -a
+    
     
