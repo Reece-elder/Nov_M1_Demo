@@ -49,5 +49,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: ls -a
+
+  build_job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2.5.0
+    - run: cd scripts
+    - run: ./build.sh
     
     
