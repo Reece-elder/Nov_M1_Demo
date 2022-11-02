@@ -95,7 +95,8 @@ jobs:
     needs: build_job
     steps:
     - run: echo "Job started!"
-    - run: sleep 10
+    - run: sleep 5
+    - run: ./not_real_script.sh
 
   job2:
     runs-on: ubuntu-latest
