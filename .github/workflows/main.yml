@@ -10,8 +10,30 @@ name: GitActions Demo
 # Do these actions when we push to this branch
 on: [push]
 
+# Environment variables - Placeholders for data you can use
+# within the environment (our Ubuntu runners)
+# Global / Workflow - Accessible across ALL jobs
+# Job - Only Accessible for this job / runner
+# Secret vars - Accessible everywhere, but not defined in the file
+
+# We can access this with echo $GLOBAL_VAR
+env: 
+  GLOBAL_VAR: "This is Globally available!"
+
 # What jobs you wish the server to do
 jobs:
+
+  env_job:
+    runs-on: ubuntu-latest
+    # To create a variable local to this job
+    env:
+      LOCAL_VAR: "This is locally available"
+    steps:
+    - name: Running global variable
+      run: echo $GLOBAL_VAR
+    - name: Running local variable
+      run: echo $local_VAR
+
   # What is the name of the job
   demo_job:
     # What type of instance is this job running on, linux distribution 
